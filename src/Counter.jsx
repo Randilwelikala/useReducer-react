@@ -4,7 +4,14 @@ const Counter = ()=>{
     const[count,setCount] = useState(0);
     return(
         <div>
-            <h1>Count : {count}</h1>
+             <h1>Count : {count}</h1>
+
+            <button onClick={()=>setCount(count+1)}>+</button>
+            <br/>
+            <button onClick ={()=>setCount(count-1)}>-</button>
+            <br/>
+            <button onClick={()=>setCount(0)}>Reset</button>
+           
         </div>
     )
 }
