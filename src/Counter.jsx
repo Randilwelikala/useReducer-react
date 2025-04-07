@@ -1,7 +1,13 @@
 import { useReducer, useState } from "react";
 
 const reducer = (state,action)=>{
-    console.log('Reducer Function');
+    // console.log('Reducer Function');
+    switch(action.type){
+        case 'increment':
+            return {count:state.count+1}
+        default:
+            return state;    
+    }
 
 };
 
@@ -21,7 +27,7 @@ const Counter = ()=>{
             <button onClick ={()=>setCount(count-1)}>-</button>
             <br/>
             <button onClick={()=>setCount(0)}>Reset</button> */}
-            <button onClick={()=>dispatch()}>+</button>
+            <button onClick={()=>dispatch({type:'increment'})}>+</button>
            
         </div>
     )
